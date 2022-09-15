@@ -68,7 +68,7 @@ public class SignIn {
 			try {
 			assertTrue(login.isDisplayed());
 			}
-			catch(NoSuchElementException ex) {}
+			catch(NoSuchElementException ex) {System.out.println("Invalid Password");}
 		}
 		else
 			Assert.assertEquals("https://mobileworld.azurewebsites.net/index.html", driver.getCurrentUrl());

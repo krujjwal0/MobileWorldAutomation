@@ -33,21 +33,28 @@ public class MobileWorldTest {
     public Object[][] emailDataProvider() {
         return new Object [][] {
             {"krujjwal0@gmail.com"},
-            {"uj"}
+            {"ujj"}
         };
     }
 	
 	@DataProvider
     public Object[][] passwordDataProvider() {
         return new Object [][] {
-            {"Password123"},
-            {"Ps"},
+//            {"Password123"},
+//            {"Ps"},
             {"Pswd12"}
         };
     }
 	
+	@DataProvider
+    public Object[][] firstName() {
+        return new Object [][] {
+            {"Ujjwal"}
+        };
+    }
 	
-	@Test(dataProvider ="emailDataProvider")
+	
+	@Test(dataProvider ="emailDataProvider", priority=2)
 	public void emailSignInInputField (String userEmail) throws InterruptedException {
 		objSignIn.toLoginPage();
 		objSignIn.enterEmail(userEmail);
@@ -57,7 +64,7 @@ public class MobileWorldTest {
 		objSignIn.isEmailTestPassed(userEmail);
 	}
 	
-	@Test(dataProvider ="passwordDataProvider")
+	@Test(dataProvider ="passwordDataProvider", priority=2)
 	public void passwordSignInInputField (String userPassword) throws InterruptedException {
 		objSignIn.toLoginPage();
 		objSignIn.enterEmail("krujjwal0@gmail.com");
@@ -67,40 +74,40 @@ public class MobileWorldTest {
 		objSignIn.isPasswordTestPassed(userPassword);
 	}
 	
-	@Test(dataProvider = "emailDataProvider")
+	@Test(dataProvider = "emailDataProvider", priority=1)
 	public void register(String firstName) throws InterruptedException {
 		objSignIn.toLoginPage();
 		objSignUp.clickOnSignUp();
 		objSignUp.enterFirstName(firstName);
-		objSignUp.enterLastName(firstName);
+		objSignUp.enterLastName("Kumar");
 		objSignUp.enterEmail("krujjwal0@gmail.com");
 		objSignUp.enterPassword("Hello12");
 		objSignUp.enterDOB("10/31/2000");
 		objSignUp.chooseGender();
 		objSignUp.enterMob("9934127879");
-		objSignUp.enterShortBio(firstName);
+		objSignUp.enterShortBio("Hi There");
 		objSignUp.clickRegisterButton();
 		objSignUp.handleAlertBoxAppeared();
 		Thread.sleep(2000);
 	}
 	
-	@Test(dataProvider ="emailDataProvider", priority=10)
-	public void order (String userEmail) throws InterruptedException {
+	@Test(dataProvider ="firstName", priority=10)
+	public void order (String userFirstName) throws InterruptedException {
 
 		objOrder.clickOnSupport();
 		objOrder.clickOnOrder();
 		objOrder.switchToOrderPage();
-		objOrder.enterFirstName(userEmail);
-		objOrder.enterLastName(userEmail);
-		objOrder.enterEmail(userEmail);
-		objOrder.enterPassword(userEmail);
+		objOrder.enterFirstName(userFirstName);
+		objOrder.enterLastName("Kumar");
+		objOrder.enterEmail("krujjwal0@gmail.com");
+		objOrder.enterPassword("Hello12");
 		objOrder.chooseGender();
 		objOrder.enterMobile("9934127879");
-		objOrder.enterAddress1(userEmail);
-		objOrder.enterAddress2(userEmail);
+		objOrder.enterAddress1("105, Surya Royal Homes");
+		objOrder.enterAddress2("Near Indian Public School, Nagavara");
 		objOrder.enterCity("Bangalore");
 		objOrder.chooseState();
-		objOrder.enterZip("12345678");
+		objOrder.enterZip("530045");
 		objOrder.chooseAppleMobile();
 		objOrder.enterNumOfMobile("1");
 		objOrder.checkTheBox();
