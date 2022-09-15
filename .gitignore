@@ -1,5 +1,5 @@
-.settings/
-.target/
-.classpath
-.project
-.target-output/
+# .settings/
+# .target/
+# .classpath
+# .project
+# .target-output/
