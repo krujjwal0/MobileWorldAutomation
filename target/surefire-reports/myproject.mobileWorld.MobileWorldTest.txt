@@ -1,0 +1,56 @@
+-------------------------------------------------------------------------------
+Test set: myproject.mobileWorld.MobileWorldTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 35.741 s <<< FAILURE! - in myproject.mobileWorld.MobileWorldTest
+emailSignInInputField(myproject.mobileWorld.MobileWorldTest)  Time elapsed: 1.35 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"a[type='submit']"}
+  (Session info: chrome=105.0.5195.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'QT-INBG-LT1073', ip: '10.20.15.54', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d9c0a8cc7935f2cd960237fde59631f2, findElement {using=css selector, value=a[type='submit']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\UJJWAL~1.KUM\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:61972}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61972/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d9c0a8cc7935f2cd960237fde59631f2
+	at myproject.mobileWorld.MobileWorldTest.emailSignInInputField(MobileWorldTest.java:57)
+
+passwordSignInInputField(myproject.mobileWorld.MobileWorldTest)  Time elapsed: 1.345 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"a[type='submit']"}
+  (Session info: chrome=105.0.5195.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'QT-INBG-LT1073', ip: '10.20.15.54', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d9c0a8cc7935f2cd960237fde59631f2, findElement {using=css selector, value=a[type='submit']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\UJJWAL~1.KUM\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:61972}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61972/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d9c0a8cc7935f2cd960237fde59631f2
+	at myproject.mobileWorld.MobileWorldTest.passwordSignInInputField(MobileWorldTest.java:67)
+
+passwordSignInInputField(myproject.mobileWorld.MobileWorldTest)  Time elapsed: 1.318 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"a[type='submit']"}
+  (Session info: chrome=105.0.5195.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'QT-INBG-LT1073', ip: '10.20.15.54', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d9c0a8cc7935f2cd960237fde59631f2, findElement {using=css selector, value=a[type='submit']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\UJJWAL~1.KUM\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:61972}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61972/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d9c0a8cc7935f2cd960237fde59631f2
+	at myproject.mobileWorld.MobileWorldTest.passwordSignInInputField(MobileWorldTest.java:67)
+
+order(myproject.mobileWorld.MobileWorldTest)  Time elapsed: 2.208 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"(//input[@id='inputFirstName'])[1]"}
+  (Session info: chrome=105.0.5195.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'QT-INBG-LT1073', ip: '10.20.15.54', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d9c0a8cc7935f2cd960237fde59631f2, findElement {using=xpath, value=(//input[@id='inputFirstName'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\UJJWAL~1.KUM\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:61972}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61972/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d9c0a8cc7935f2cd960237fde59631f2
+	at myproject.mobileWorld.MobileWorldTest.order(MobileWorldTest.java:93)
+
