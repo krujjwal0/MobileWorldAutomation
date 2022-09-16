@@ -19,7 +19,7 @@ public class MobileWorldTest {
 	
 	@BeforeMethod
 	public void initiateSession() {
-		driver.get("https://mobileworld.azurewebsites.net");
+		driver.get("https://mobileworld.banyanpro.com/");
 		driver.manage().window().maximize();
 	}
 	

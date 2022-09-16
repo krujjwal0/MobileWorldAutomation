@@ -60,7 +60,7 @@ public class SignIn {
 			catch(NoSuchElementException ex) {}
 		}
 		else
-			Assert.assertEquals("https://mobileworld.azurewebsites.net/index.html", driver.getCurrentUrl());
+			Assert.assertEquals("https://mobileworld.banyanpro.com/index.html", driver.getCurrentUrl());
 	}
 	
 	public void isPasswordTestPassed(String userPassword) {
@@ -71,7 +71,7 @@ public class SignIn {
 			catch(NoSuchElementException ex) {System.out.println("Invalid Password");}
 		}
 		else
-			Assert.assertEquals("https://mobileworld.azurewebsites.net/index.html", driver.getCurrentUrl());
+			Assert.assertEquals("https://mobileworld.banyanpro.com/index.html", driver.getCurrentUrl());
 	}
 	
 	
