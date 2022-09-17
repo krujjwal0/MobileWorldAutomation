@@ -69,9 +69,11 @@ WebDriver driver;
 	public void clickOnSupport() {
 		support.click();
 	}
+	
 	public void clickOnOrder() {
 		order.click();
 	}
+	
 	public void switchToOrderPage() {
 		Set<String> windows = driver.getWindowHandles();
 		Iterator<String> it = windows.iterator();
@@ -80,33 +82,43 @@ WebDriver driver;
 		String childId = (String) it.next();
 		driver.switchTo().window(childId);
 	}
+	
 	public void enterFirstName(String userFirstName) {
 		firstName.sendKeys(userFirstName);
 	}
+	
 	public void enterLastName(String userLastName) {
 		lastName.sendKeys(userLastName);
 	}
+	
 	public void enterEmail(String userEmail) {
 		email.sendKeys(userEmail);
 	}
+	
 	public void enterPassword(String userPassword) {
 		password.sendKeys(userPassword);
 	}
+	
 	public void chooseGender() {
 		gender.click();
 	}
+	
 	public void enterMobile(String userMobile) {
 		mob.sendKeys(userMobile);
 	}
+	
 	public void enterAddress1(String userAddress1) {
 		address1.sendKeys(userAddress1);
 	}
+	
 	public void enterAddress2(String userAddress2) {
 		address2.sendKeys(userAddress2);
 	}
+	
 	public void enterCity(String userCity) {
 		city.sendKeys(userCity);
 	}
+	
 	public void chooseState() {
 		Select S=new Select(state);
 		S.selectByIndex(2);
@@ -122,18 +134,19 @@ WebDriver driver;
 		Thread.sleep(1000);
 		appleModel.click();
 	}
+	
 	public void enterNumOfMobile(String userMobCount) {
 		mobCount.sendKeys(userMobCount);
 	}
 	
 	public void checkTheBox() throws InterruptedException {
-	WebElement Count = driver.findElement(By.id("bought"));
-	Select s3= new Select( Count );
-	s3.selectByIndex(1);
-	Thread.sleep(2000);
-	List<WebElement> a=driver.findElements(By.id("gridCheck1"));
-	((WebElement) a.get(0)).click();
-	((WebElement) a.get(1)).click();
+		WebElement Count = driver.findElement(By.id("bought"));
+		Select s3= new Select( Count );
+		s3.selectByIndex(1);
+		Thread.sleep(2000);
+		List<WebElement> a=driver.findElements(By.id("gridCheck1"));
+		((WebElement) a.get(0)).click();
+		((WebElement) a.get(1)).click();
 	}
 	
 	public void clickOnOrderNow() {
@@ -141,7 +154,7 @@ WebDriver driver;
 	}
 	
 	public void closeThePopUp() throws InterruptedException {
-	Thread.sleep(2000);
+	Thread.sleep(1000);
 	driver.findElement(By.xpath("//a[@class='btn btn-secondary']")).click();
 	Thread.sleep(1000);
 	}

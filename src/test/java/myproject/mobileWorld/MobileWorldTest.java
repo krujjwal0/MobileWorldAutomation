@@ -28,88 +28,90 @@ public class MobileWorldTest {
 		driver.quit();
 	}
 	
-	
+	//****************************************************************\\
+	//*************SignUp Data Provider & Test Method*****************\\
+	//****************************************************************\\
 	@DataProvider
-    public Object[][] emailDataProvider() {
-        return new Object [][] {
-            {"krujjwal0@gmail.com"},
-            {"ujj"}
-        };
-    }
-	
-	@DataProvider
-    public Object[][] passwordDataProvider() {
-        return new Object [][] {
-//            {"Password123"},
-//            {"Ps"},
-            {"Pswd12"}
-        };
-    }
-	
-	@DataProvider
-    public Object[][] firstName() {
-        return new Object [][] {
-            {"Ujjwal"}
-        };
-    }
-	
-	
-	@Test(dataProvider ="emailDataProvider", priority=2)
-	public void emailSignInInputField (String userEmail) throws InterruptedException {
-		objSignIn.toLoginPage();
-		objSignIn.enterEmail(userEmail);
-		objSignIn.enterPassword("Hello12");
-		objSignIn.clickLogin();
-		
-		objSignIn.isEmailTestPassed(userEmail);
+	public Object[][] signUpDataProvider() {
+		  return new Object[][] {
+		      new Object[] { "Ujjwal", "Kumar" ,"krujjwal0@gmail.com", "Pass1", "31-10-2000", "9934127879", "Hi There"},
+		      new Object[] { "Uk", "Singh" ,"ujjwal.k@qt.com", "Pass2", "31-10-1999", "1111111111", "Hi Hello"},
+		      new Object[] { "Uk", "Singh" ,"ujjwal.k@qt.com", "Pass2", "31-10-1999", "1111111111", "Hi Third"},
+		  };
 	}
 	
-	@Test(dataProvider ="passwordDataProvider", priority=2)
-	public void passwordSignInInputField (String userPassword) throws InterruptedException {
-		objSignIn.toLoginPage();
-		objSignIn.enterEmail("krujjwal0@gmail.com");
-		objSignIn.enterPassword(userPassword);
-		objSignIn.clickLogin();
-		
-		objSignIn.isPasswordTestPassed(userPassword);
-	}
-	
-	@Test(dataProvider = "emailDataProvider", priority=1)
-	public void register(String firstName) throws InterruptedException {
+	@Test(dataProvider = "signUpDataProvider", priority=1)
+	public void register(String firstName, String lastName, String email, String password,
+			String DOB, String mobile, String shortBio ) throws InterruptedException {
 		objSignIn.toLoginPage();
 		objSignUp.clickOnSignUp();
 		objSignUp.enterFirstName(firstName);
-		objSignUp.enterLastName("Kumar");
-		objSignUp.enterEmail("krujjwal0@gmail.com");
-		objSignUp.enterPassword("Hello12");
-		objSignUp.enterDOB("10/31/2000");
+		objSignUp.enterLastName(lastName);
+		objSignUp.enterEmail(email);
+		objSignUp.enterPassword(password);
+		objSignUp.enterDOB(DOB);
 		objSignUp.chooseGender();
-		objSignUp.enterMob("9934127879");
-		objSignUp.enterShortBio("Hi There");
+		objSignUp.enterMob(mobile);
+		objSignUp.enterShortBio(shortBio);
 		objSignUp.clickRegisterButton();
 		objSignUp.handleAlertBoxAppeared();
 		Thread.sleep(2000);
 	}
 	
-	@Test(dataProvider ="firstName", priority=10)
-	public void order (String userFirstName) throws InterruptedException {
-
+	//****************************************************************\\
+	//*************SignIn Data Provider & Test Method*****************\\
+	//****************************************************************\\
+	@DataProvider
+	public Object[][] signInDataProvider() {
+		  return new Object[][] {
+		      new Object[] { "krujjwal0@gmail.com", "Passwd12"},
+		      new Object[] { "uk", "Pswd23"},
+		      new Object[] { "krujjwal0@gmail.com", "Ps"},
+		      new Object[] { "ujjwal.kr@gmail.com", "Password1234"},
+		  };
+	}
+	
+	@Test(dataProvider ="signInDataProvider", priority=2)
+	public void signInMethod (String userEmail, String userPassword) throws InterruptedException {
+		objSignIn.toLoginPage();
+		objSignIn.enterEmail(userEmail);
+		objSignIn.enterPassword(userPassword);
+		objSignIn.clickLogin();
+		
+		objSignIn.isEmailTestPassed(userEmail);
+		objSignIn.isPasswordTestPassed(userPassword);
+	}
+	
+	//****************************************************************\\
+	//*************Order Data Provider & Test Method******************\\
+	//****************************************************************\\
+	
+	@DataProvider
+	public Object[][] orderDataProvider() {
+		  return new Object[][] {
+		      new Object[] {"Ujjwal", "Kumar" ,"krujjwal0@gmail.com", "Pass1", "9934127879", "105, Surya Royal Homes",
+		    		  "Near Indian Public School, Nagavara","Bangalore", "530045", "1"}
+		  };
+	}
+	@Test(dataProvider ="orderDataProvider", priority=3)
+	public void orderMethod(String firstName, String lastName, String email, String password, String mobile, 
+			String address1, String address2, String city, String zip, String numOfMobile) throws InterruptedException {
 		objOrder.clickOnSupport();
 		objOrder.clickOnOrder();
 		objOrder.switchToOrderPage();
-		objOrder.enterFirstName(userFirstName);
-		objOrder.enterLastName("Kumar");
-		objOrder.enterEmail("krujjwal0@gmail.com");
-		objOrder.enterPassword("Hello12");
+		objOrder.enterFirstName(firstName);
+		objOrder.enterLastName(lastName);
+		objOrder.enterEmail(email);
+		objOrder.enterPassword(password);
 		objOrder.chooseGender();
-		objOrder.enterMobile("9934127879");
-		objOrder.enterAddress1("105, Surya Royal Homes");
-		objOrder.enterAddress2("Near Indian Public School, Nagavara");
-		objOrder.enterCity("Bangalore");
+		objOrder.enterMobile(mobile);
+		objOrder.enterAddress1(address1);
+		objOrder.enterAddress2(address2);
+		objOrder.enterCity(city);
 		objOrder.chooseState();
-		objOrder.enterZip("530045");
+		objOrder.enterZip(zip);
 		objOrder.chooseAppleMobile();
-		objOrder.enterNumOfMobile("1");
+		objOrder.enterNumOfMobile(numOfMobile);
 		objOrder.checkTheBox();
 		objOrder.clickOnOrderNow();
 		objOrder.closeThePopUp();
