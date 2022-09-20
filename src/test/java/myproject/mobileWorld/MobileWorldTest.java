@@ -35,11 +35,11 @@ public class MobileWorldTest {
 	public Object[][] signUpDataProvider() {
 		  return new Object[][] {
 		      new Object[] { "Ujjwal", "Kumar" ,"krujjwal0@gmail.com", "Pass1", "10/31/2000", "9934127879", "Hi There"},
-		    //   new Object[] { "U", "Kumar" ,"ujjwal.k@qt.com", "Pass2", "10/31/1999", "1111111111", "Hi Hello"},
-		    //   new Object[] { "RandomStringToInsertMoreThanTwentyCharacter", "LastName" ,"ujjwal.k@qt.com", "Pass2", "01/01/2000", "1111111111", "Hi Third"},
-			//   new Object[] { "Ujjwal", "K" ,"krujjwal0@gmail.com", "Pass1", "10/31/2000", "9934127879", "Hi There"},
-			//   new Object[] { "Ujjwal", "Kumar" ,"krujjwal0@gmail.com", "PS", "10/31/2000", "9934127879", "Hi There"},
-			//   new Object[] { "Ujjwal", "Kumar" ,"krujjwal0@gmail.com", "Pass1", "10/31/2000", "9934127879678", "Hi There"},
+		       new Object[] { "U", "Kumar" ,"ujjwal.k@qt.com", "Pass2", "10/31/1999", "1111111111", "Hi Hello"},
+		       new Object[] { "RandomStringToInsertMoreThanTwentyCharacter", "LastName" ,"ujjwal.k@qt.com", "Pass2", "01/01/2000", "1111111111", "Hi Third"},
+			   new Object[] { "Ujjwal", "K" ,"krujjwal0@gmail.com", "Pass1", "10/31/2000", "9934127879", "Hi There"},
+			   new Object[] { "Ujjwal", "Kumar" ,"krujjwal0@gmail.com", "PS", "10/31/2000", "9934127879", "Hi There"},
+			   new Object[] { "Ujjwal", "Kumar" ,"krujjwal0@gmail.com", "Pass1", "10/31/2000", "9934127879678", "Hi There"},
 		  };
 	}
 	
@@ -68,9 +68,9 @@ public class MobileWorldTest {
 	public Object[][] signInDataProvider() {
 		  return new Object[][] {
 		      new Object[] { "krujjwal0@gmail.com", "Passwd12"},
-		    //   new Object[] { "uk", "Pswd23"},
-		    //   new Object[] { "krujjwal0@gmail.com", "Ps"},
-		    //   new Object[] { "ujjwal.kr@gmail.com", "Password1234"},
+		       new Object[] { "uk", "Pswd23"},
+		       new Object[] { "krujjwal0@gmail.com", "Ps"},
+		       new Object[] { "ujjwal.kr@gmail.com", "Password1234"},
 		  };
 	}
 	
