@@ -34,9 +34,12 @@ public class MobileWorldTest {
 	@DataProvider
 	public Object[][] signUpDataProvider() {
 		  return new Object[][] {
-		      new Object[] { "Ujjwal", "Kumar" ,"krujjwal0@gmail.com", "Pass1", "31-10-2000", "9934127879", "Hi There"},
-		      new Object[] { "Uk", "Singh" ,"ujjwal.k@qt.com", "Pass2", "31-10-1999", "1111111111", "Hi Hello"},
-		      new Object[] { "Uk", "Singh" ,"ujjwal.k@qt.com", "Pass2", "31-10-1999", "1111111111", "Hi Third"},
+		      new Object[] { "Ujjwal", "Kumar" ,"krujjwal0@gmail.com", "Pass1", "10/31/2000", "9934127879", "Hi There"},
+		      new Object[] { "U", "Kumar" ,"ujjwal.k@qt.com", "Pass2", "10/31/1999", "1111111111", "Hi Hello"},
+		      new Object[] { "RandomStringToInsertMoreThanTwentyCharacter", "LastName" ,"ujjwal.k@qt.com", "Pass2", "01/01/2000", "1111111111", "Hi Third"},
+			  new Object[] { "Ujjwal", "K" ,"krujjwal0@gmail.com", "Pass1", "10/31/2000", "9934127879", "Hi There"},
+			  new Object[] { "Ujjwal", "Kumar" ,"krujjwal0@gmail.com", "PS", "10/31/2000", "9934127879", "Hi There"},
+			  new Object[] { "Ujjwal", "Kumar" ,"krujjwal0@gmail.com", "Pass1", "10/31/2000", "9934127879678", "Hi There"},
 		  };
 	}
 	
@@ -54,7 +57,7 @@ public class MobileWorldTest {
 		objSignUp.enterMob(mobile);
 		objSignUp.enterShortBio(shortBio);
 		objSignUp.clickRegisterButton();
-		objSignUp.handleAlertBoxAppeared();
+		objSignUp.handleAlertBoxAppeared(firstName, lastName, password, mobile);
 		Thread.sleep(2000);
 	}
 	

@@ -1,10 +1,16 @@
 package myproject.mobileWorld.pages;
+import static org.testng.Assert.assertTrue;
+
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class SignUp {
 	WebDriver driver;
@@ -81,12 +87,20 @@ public class SignUp {
 		bio.sendKeys(userBio);
 	}
 	
-	public void clickRegisterButton() {
+	public void clickRegisterButton() {		
 		registerButton.click();
 	}
-	@SuppressWarnings("deprecation")
-	public void handleAlertBoxAppeared() {
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
+	public void handleAlertBoxAppeared(String firstName, String lastName, String password, String mobile) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		
+		if(firstName.length()<3 || firstName.length()>20 || lastName.length()<3 || lastName.length()>20 ||
+			mobile.length() != 10 || password.length()<3 || password.length() > 10) {
+		if(wait.until(ExpectedConditions.alertIsPresent())!=null)
+			driver.switchTo().alert().accept();
+	assertTrue(false);	
+		}
+		else
 		driver.switchTo().alert().accept();
 	}
 	
